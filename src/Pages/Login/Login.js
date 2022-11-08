@@ -1,14 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import UseTitle from '../../Hooks/UseTitle';
 import Header from '../Shared/Header/Header';
 import image from '../../asset/footer_image.jpg'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Login = () => {
     UseTitle('Login')
 
+    const { loginUser } = useContext(AuthContext)
+
     const handleLogin = event => {
         event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+
+        loginUser(email, password)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+            })
+            .catch(error => console.error(error))
     }
 
     return (
