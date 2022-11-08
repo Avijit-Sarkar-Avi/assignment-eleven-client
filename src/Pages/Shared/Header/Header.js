@@ -5,17 +5,17 @@ import logo from '../../../asset/navbar.jpg'
 const Header = () => {
     const menuItems = <>
         <li>
-            <Link to="/">Home</Link>
+            <Link to="/" className='font-semibold'>Home</Link>
         </li>
         <li>
             <Link></Link>
         </li>
         <li>
-            <Link to="/blog">Blog</Link>
+            <Link to="/blog" className='font-semibold'>Blog</Link>
         </li>
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar h-20 mb-12 pt-12 bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -35,7 +35,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a href="/" className="btn">Get started</a>
+                <button className='btn btn-outline btn-warning'>Login</button>
             </div>
         </div>
     );
