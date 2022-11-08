@@ -1,7 +1,9 @@
 import React from 'react';
+import UseTitle from '../../Hooks/UseTitle';
 import Header from '../Shared/Header/Header';
 
 const Blog = () => {
+    UseTitle('Blog')
     return (
 
         <div>
