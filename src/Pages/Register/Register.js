@@ -4,12 +4,16 @@ import image from '../../asset/footer_image.jpg'
 import { Link } from 'react-router-dom';
 import UseTitle from '../../Hooks/UseTitle';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import { FaGoogle } from 'react-icons/fa';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Register = () => {
 
     UseTitle('Register')
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, googleLogin } = useContext(AuthContext);
+
+    const googleProvider = new GoogleAuthProvider();
 
     const handleRegister = event => {
         event.preventDefault()
@@ -23,6 +27,15 @@ const Register = () => {
                 console.log(user)
             })
             .catch(error => console.error(error));
+    }
+
+    const handleGoogleRegister = () => {
+        googleLogin(googleProvider)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+            })
+            .catch(error => console.error(error))
     }
 
     return (
@@ -59,6 +72,17 @@ const Register = () => {
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Register" />
                             </div>
+
+
+
+                            <div onClick={handleGoogleRegister}
+                                className="btn btn-warning shadow-lg">
+                                <span className='flex align-baseline'>
+                                    Or Register With Google
+                                    <FaGoogle className='text-xl ml-2'></FaGoogle>
+                                </span>
+                            </div>
+
                             <p className='text-center'>Already have an account? Please <Link to="/login" className='text-orange-600 font-bold'>Login</Link></p>
 
                         </form>

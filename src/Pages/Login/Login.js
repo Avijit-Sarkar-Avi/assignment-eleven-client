@@ -5,11 +5,14 @@ import image from '../../asset/footer_image.jpg'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
     UseTitle('Login')
 
-    const { loginUser } = useContext(AuthContext)
+    const { loginUser, googleLogin } = useContext(AuthContext)
+
+    const googleProvider = new GoogleAuthProvider();
 
     const handleLogin = event => {
         event.preventDefault();
@@ -24,6 +27,17 @@ const Login = () => {
             })
             .catch(error => console.error(error))
     }
+
+    const handleGoogleLogin = () => {
+        googleLogin(googleProvider)
+            .then(result => {
+                const user = result.user
+                console.log(user)
+            })
+            .catch(error => console.error(error))
+    }
+
+
 
     return (
         <div>
@@ -54,7 +68,8 @@ const Login = () => {
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
 
-                            <div className="btn btn-warning shadow-lg">
+                            <div onClick={handleGoogleLogin}
+                                className="btn btn-warning shadow-lg">
                                 <span className='flex align-baseline'>
                                     Or Login With Google
                                     <FaGoogle className='text-xl ml-2'></FaGoogle>
