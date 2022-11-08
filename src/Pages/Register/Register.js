@@ -1,14 +1,12 @@
 import React from 'react';
-import UseTitle from '../../Hooks/UseTitle';
 import Header from '../Shared/Header/Header';
 import image from '../../asset/footer_image.jpg'
 import { Link } from 'react-router-dom';
 
-const Login = () => {
-    UseTitle('Login')
+const Register = () => {
 
-    const handleLogin = event => {
-        event.preventDefault();
+    const handleRegister = event => {
+        event.preventDefault()
     }
 
     return (
@@ -20,8 +18,8 @@ const Login = () => {
                         <img className='w-3/4' src={image} alt="" />
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <h1 className="text-5xl font-bold text-center">Login</h1>
-                        <form onSubmit={handleLogin} className="card-body">
+                        <h1 className="text-5xl font-bold text-center">Register</h1>
+                        <form onSubmit={handleRegister} className="card-body">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -37,9 +35,9 @@ const Login = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary" type="submit" value="Login" />
+                                <input className="btn btn-primary" type="submit" value="Register" />
                             </div>
-                            <p className='text-center'>Donot have account? Please <Link to="/register" className='text-orange-600 font-bold'>Register</Link></p>
+                            <p className='text-center'>Donot have account? Please <Link to="/login" className='text-orange-600 font-bold'>Login</Link></p>
 
                         </form>
                     </div>
@@ -49,4 +47,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
