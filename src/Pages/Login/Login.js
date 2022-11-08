@@ -4,6 +4,7 @@ import Header from '../Shared/Header/Header';
 import image from '../../asset/footer_image.jpg'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
     UseTitle('Login')
@@ -52,6 +53,14 @@ const Login = () => {
                             <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="Login" />
                             </div>
+
+                            <div className="btn btn-warning shadow-lg">
+                                <span className='flex align-baseline'>
+                                    Or Login With Google
+                                    <FaGoogle className='text-xl ml-2'></FaGoogle>
+                                </span>
+                            </div>
+
                             <p className='text-center'>Donot have account? Please <Link to="/register" className='text-orange-600 font-bold'>Register</Link></p>
 
                         </form>
