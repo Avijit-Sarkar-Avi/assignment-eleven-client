@@ -8,9 +8,6 @@ const Header = () => {
             <Link to="/" className='font-semibold'>Home</Link>
         </li>
         <li>
-            <Link></Link>
-        </li>
-        <li>
             <Link to="/blog" className='font-semibold'>Blog</Link>
         </li>
     </>
@@ -35,7 +32,11 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className='btn btn-outline btn-warning'>Login</button>
+                <Link to='/login'>
+                    <button className='btn btn-outline btn-warning'>
+                        Login
+                    </button>
+                </Link>
             </div>
         </div>
     );
