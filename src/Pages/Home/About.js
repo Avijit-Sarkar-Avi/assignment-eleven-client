@@ -9,7 +9,7 @@ const About = () => {
                 <div className="hero-content flex-col lg:flex-row">
                     <img src={image1} className="max-w-sm rounded-lg shadow-2xl w-48 h-48" alt='' />
                     <div>
-                        <h1 className="text-5xl font-bold">Probarona</h1>
+                        <h1 className="text-5xl font-bold">Get 30% Discount</h1>
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
 
                     </div>
@@ -19,7 +19,7 @@ const About = () => {
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src={image2} className="max-w-sm rounded-lg shadow-2xl w-48 h-48" alt='' />
                     <div>
-                        <h1 className="text-5xl font-bold">Holi Festival</h1>
+                        <h1 className="text-5xl font-bold">Upcomming Ceremony</h1>
                         <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
 
                     </div>

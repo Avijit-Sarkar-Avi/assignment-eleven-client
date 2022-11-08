@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Weeding Photography",
+        "details": "Our Country is known for its ethnicity and culture. And one of the states of India, which is famous for its heritage and traditions in West Bengal. Just like their culture, wedding ceremonies are fun-filled. There are so many rituals and ceremonies to perform. Imagine having a grand wedding and not getting good pictures. Anyone would feel bad. It is very important to capture everything beautifully. So that year down the lane, you can always remember the most important day of your life. As we know, red color plays a significant role in their culture. From red Alta on hands and feet to red saree draped for the wedding ceremony, Bengalis definitely have a unique and interesting culture. Most of the traditions are similar to any Hindu wedding only, but there are some exclusive rituals that happen in Bengali weddings only. The Bengali wedding ceremonies start with the Ashirwad ceremony and end with the Sindoor Daan ceremony.",
+        "image": "https://vshoot.com/wp-content/uploads/2019/01/bengali-wedding-rituals-1.jpg",
+        "rating": 4.5,
+        "price": 80000
+    },
+    {
+        "id": 2,
+        "name": "Birthday Photography",
+        "details": "When you are young, one of the most special days of the year is your birthday. Whether its a home party or a special day out, being creative and flexible is the best way to catch memorable birthday images. Children can be temperamental at the best of times, so always be ready to capture the smiles when they occur.",
+        "image": "https://www.eventsexpress.in/Activities/BirthdayPhotograhy1.jpg",
+        "rating": 4.2,
+        "price": 50000
+    },
+    {
+        "id": 3,
+        "name": "Pahela Baishakh Photography",
+        "details": "Pahela Baishakh first day of the Bangla calender. Pahela Baishakh is celebrated in a festive manner in both Bangladesh and West Bengal. In Bangladesh Pahela Baishakh is a national holiday. The day falls on April 14 or 15.Pahela Baisakh cultural function at Ramna Park, DhakaUnder the Mughals, land taxes were collected according to the Arabic or Hijri calendar. However, as the Hijri calendar is a lunar calendar, the agricultural year does not coincide with that of the fiscal",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Mangal_Shobhajatra_in_Dhaka.jpg",
+        "rating": 4.9,
+        "price": 10000
+    },
+    {
+        "id": 4,
+        "name": "Festival Photography",
+        "details": "Probarona Purnima is the second biggest festivals of the Buddha Community during the full moon of the bangle month. Buddhists in Bangladesh will celebrate Prabarana Purnima – their second-largest religious festival – Sunday. This full moon day signifies the end of the three-month Lent of Bhikkhus",
+        "image": "https://prod-media-eng.dhakatribune.com/uploads/2017/09/WEB_Prabartana-Purnima_Fanus_Lantern_Edited_18.09.2017.jpg",
+        "rating": 4.7,
+        "price": 30000
+    },
+    {
+        "id": 5,
+        "name": "Convocation Photgraphy",
+        "details": "Convocation is a word often used on the campuses of colleges and universities in the United States, but it can designate many different types of ceremonies. In its simplest form, the word convocation means “the act or process of calling an assembly of persons to a meeting.” When it pertains to a college or university, it normally refers to some type of ceremonial gathering.",
+        "image": "https://umconvo.um.edu.my/img/files/_AMR2744.jpg",
+        "rating": 5,
+        "price": 50000
+    },
+    {
+        "id": 6,
+        "name": "Sea Beach Photography",
+        "details": "Cox's Bazar sea beach is crowded almost through out the year. It is a good place for sea bathing. Anyone can go there both by air and road from Dhaka and Chittagong.Cox's Bazar is a small town. But the natural beauty of the town is very charming. The climate of this place is very fine. The Bay of Bengal lies on the south of it. There is a high standard tourist centre at this place. There are good arrangements for the stay of the tourists of different countries of the world. Many foreigners come to this place. The people of the place are very gentle. A lot of fish is available there.",
+        "image": "https://freerangestock.com/sample/115176/-sunset-photography--photographer-.jpg",
+        "rating": 4.1,
+        "price": 40000
+    }
+]
