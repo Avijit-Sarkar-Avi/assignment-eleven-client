@@ -32,7 +32,13 @@ const ServiceDetails = () => {
             body: JSON.stringify(order)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                if (data.acknowledged) {
+                    alert('Review placed successfully')
+                    form.reset();
+                }
+            })
             .catch(error => console.error(error))
 
     }
