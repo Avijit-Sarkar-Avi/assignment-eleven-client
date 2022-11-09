@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import UseTitle from '../../Hooks/UseTitle';
+import ServiceReview from './ServiceReview';
+
 
 const ServiceDetails = () => {
     UseTitle('Details')
@@ -24,6 +26,8 @@ const ServiceDetails = () => {
             message
         }
 
+
+
         fetch('http://localhost:5000/orders', {
             method: 'POST',
             headers: {
@@ -42,6 +46,14 @@ const ServiceDetails = () => {
             .catch(error => console.error(error))
 
     }
+
+    const [review, setReview] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/orders?service=${_id}`)
+            .then(res => res.json())
+            .then(data => setReview(data))
+    }, [_id])
 
 
 
@@ -65,8 +77,14 @@ const ServiceDetails = () => {
             </div>
 
 
-
-
+            <div className='m-20 grid grid-cols-3 gap-20'>
+                {
+                    review.map(reviews => <ServiceReview
+                        key={reviews._id}
+                        reviews={reviews}
+                    ></ServiceReview>)
+                }
+            </div>
 
 
             <div className="hero bg-base-200">
