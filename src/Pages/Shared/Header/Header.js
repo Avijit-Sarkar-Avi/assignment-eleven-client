@@ -4,7 +4,7 @@ import logo from '../../../asset/navbar.jpg'
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     const menuItems = <>
         <li>
             <Link to="/" className='font-semibold'>Home</Link>
@@ -21,6 +21,9 @@ const Header = () => {
                 </li>
                 <li>
                     <Link to="/addservice" className='font-semibold'>Add Services</Link>
+                </li>
+                <li>
+                    <Link onClick={logOut} className='font-semibold'>LogOut</Link>
                 </li>
             </>
             :
