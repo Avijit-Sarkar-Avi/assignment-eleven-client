@@ -4,13 +4,13 @@ import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const ReviewField = () => {
 
-    const { _id, price } = useLoaderData();
+    const { _id, price, name } = useLoaderData();
     const { user } = useContext(AuthContext);
 
     const handleReview = event => {
         event.preventDefault();
         const form = event.target;
-        const name = `${form.fname.value} ${form.lname.value}`;
+        const reviewerName = `${form.fname.value} ${form.lname.value}`;
         const email = user?.email;
         const picture = form.urlPic.value;
         const rating = form.rating.value;
@@ -20,7 +20,7 @@ const ReviewField = () => {
             service: _id,
             serviceName: name,
             price,
-            customer: name,
+            customer: reviewerName,
             email,
             picture,
             rating,

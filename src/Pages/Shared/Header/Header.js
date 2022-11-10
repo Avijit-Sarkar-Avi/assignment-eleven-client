@@ -10,6 +10,9 @@ const Header = () => {
         <li>
             <Link to="/blog" className='font-semibold'>Blog</Link>
         </li>
+        <li>
+            <Link to="/myreview" className='font-semibold'>My Review</Link>
+        </li>
     </>
     return (
         <div className="navbar h-20 mb-12 pt-12 bg-base-100">
