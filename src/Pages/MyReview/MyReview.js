@@ -28,6 +28,28 @@ const MyReview = () => {
             })
     }
 
+    const handleUpdate = _id => {
+        fetch(`http://localhost:5000/orders/${_id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ status: `${myreview.message}` })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    const remaining = myreview.filter(reviews => reviews._id !== _id);
+                    const approving = myreview.find(reviews => reviews._id === _id);
+                    approving.status = `${myreview.message}`
+
+                    const updated = [approving, ...remaining];
+                    setMyreview(updated);
+                }
+            })
+    }
+
     return (
         <div className='m-20 grid sm:grid-cols-1 md:grid-cols-3 gap-20'>
 
@@ -36,6 +58,7 @@ const MyReview = () => {
                     key={myreviews._id}
                     myreviews={myreviews}
                     handleDelete={handleDelete}
+                    handleUpdate={handleUpdate}
                 ></Reviews>)
             }
         </div>

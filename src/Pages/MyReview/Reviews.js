@@ -1,7 +1,7 @@
 import React from 'react';
 import toast, { Toaster } from 'react-hot-toast';
-const Reviews = ({ myreviews, handleDelete }) => {
-    const { _id, customer, picture, rating, message, serviceName } = myreviews;
+const Reviews = ({ myreviews, handleDelete, handleUpdate }) => {
+    const { _id, customer, picture, rating, message, serviceName, status } = myreviews;
     const notify = () => toast('Deleted Successfully');
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
@@ -22,10 +22,33 @@ const Reviews = ({ myreviews, handleDelete }) => {
                     </div>
                 </div>
                 <h2 className="card-title">{customer}</h2>
-                <p>{message}</p>
+                <p>{message + status}</p>
                 <div className="badge badge-secondary">{rating}</div>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Edit</button>
+
+                    {
+                        <div onClick={() => handleUpdate(_id)}>
+                            {/* The button to open modal */}
+                            <label htmlFor="my-modal-3" className="btn">Edit</label>
+
+                            {/* Put this part before </body> tag */}
+                            <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+                            <div className="modal">
+                                <div className="modal-box relative">
+                                    <label htmlFor="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                                    <h3 className="text-lg font-bold">Update Your Comment!</h3>
+                                    <p className="py-4">
+                                        <div className="form-control">
+                                            <textarea className="textarea textarea-bordered" name='message' placeholder="Your Comment">
+                                                {status}
+                                            </textarea>
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
                 </div>
             </div>
         </div>
