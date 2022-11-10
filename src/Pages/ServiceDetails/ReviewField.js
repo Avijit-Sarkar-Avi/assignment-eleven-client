@@ -1,8 +1,11 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import toast, { Toaster } from 'react-hot-toast';
 
 const ReviewField = () => {
+
+    const notify = () => toast('Review placed successfully');
 
     const { _id, price, name } = useLoaderData();
     const { user } = useContext(AuthContext);
@@ -40,7 +43,6 @@ const ReviewField = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('Review placed successfully')
                     form.reset();
                 }
             })
@@ -86,7 +88,8 @@ const ReviewField = () => {
                 </div>
 
                 <div className="form-control mt-6">
-                    <input className='btn btn-primary w-28' type="submit" value="Submit" />
+                    <input onClick={notify} className='btn btn-primary w-28' type="submit" value="Submit" />
+                    <Toaster></Toaster>
                 </div>
 
             </form>

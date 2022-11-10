@@ -1,8 +1,11 @@
 import React from 'react';
 import UseTitle from '../../Hooks/UseTitle';
+import toast, { Toaster } from 'react-hot-toast';
 
 const AddService = () => {
     UseTitle('Add Service')
+
+    const notify = () => toast('Services added successfully');
 
     const handleAddData = event => {
         event.preventDefault();
@@ -32,7 +35,6 @@ const AddService = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('Review placed successfully')
                     form.reset();
                 }
             })
@@ -77,7 +79,8 @@ const AddService = () => {
                     </div>
 
                     <div className="form-control mt-6">
-                        <input className='btn btn-primary w-28' type="submit" value="Submit" />
+                        <input onClick={notify} className='btn btn-primary w-28' type="submit" value="Submit" />
+                        <Toaster></Toaster>
                     </div>
 
                 </form>
