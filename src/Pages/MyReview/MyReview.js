@@ -12,7 +12,7 @@ const MyReview = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/order?email=${user?.email}`, {
+        fetch(`https://assignment-eleven-server-seven.vercel.app/order?email=${user?.email}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('my-token')}`
             }
@@ -22,7 +22,7 @@ const MyReview = () => {
     }, [user?.email])
 
     const handleDelete = _id => {
-        fetch(`http://localhost:5000/orders/${_id}`, {
+        fetch(`https://assignment-eleven-server-seven.vercel.app/orders/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -36,7 +36,7 @@ const MyReview = () => {
     }
 
     const handleUpdate = _id => {
-        fetch(`http://localhost:5000/orders/${_id}`, {
+        fetch(`https://assignment-eleven-server-seven.vercel.app/orders/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
