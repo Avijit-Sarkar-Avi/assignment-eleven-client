@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 
 const ReviewField = () => {
+
+    const navigate = useNavigate();
 
     const notify = () => toast('Review placed successfully');
 

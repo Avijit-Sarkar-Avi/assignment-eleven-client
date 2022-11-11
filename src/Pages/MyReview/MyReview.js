@@ -12,7 +12,11 @@ const MyReview = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/order?email=${user?.email}`)
+        fetch(`http://localhost:5000/order?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('my-token')}`
+            }
+        })
             .then(res => res.json())
             .then(data => setMyreview(data))
     }, [user?.email])

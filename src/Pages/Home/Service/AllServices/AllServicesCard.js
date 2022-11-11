@@ -1,8 +1,11 @@
 import React from 'react';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
+import UseTitle from '../../../../Hooks/UseTitle';
 
 const AllServicesCard = ({ service }) => {
+    UseTitle('All Services')
+
     const { _id, name, details, image, rating, price } = service;
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
@@ -23,7 +26,7 @@ const AllServicesCard = ({ service }) => {
                 <p>
                     {
                         details.length > 100 ?
-                            <p>{details.slice(0, 100) + '...'} <Link to=''>Read More</Link> </p>
+                            <p>{details.slice(0, 100) + '...'} <Link to={`/details/${_id}`}>Read More</Link> </p>
                             :
                             <p>{details}</p>
                     }
